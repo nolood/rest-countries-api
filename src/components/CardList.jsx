@@ -3,7 +3,7 @@ import { PUBLIC_URL } from '../utils/consts';
 import Card from './Card';
 
 const CardList = ({activeFilter, searchFilter}) => {
-  const data = PUBLIC_URL + '/data.json'
+  const data = 'https://nolood.github.io/rest-countries-api/data.json'
   return (
     <div className='cardlist'>
       {

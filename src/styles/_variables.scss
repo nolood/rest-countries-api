@@ -1,0 +1,15 @@
+
+html[data-theme = 'light'] {
+  --background-color: hsl(0, 0%, 98%);
+  --text-color: hsl(200, 15%, 8%);
+  --elem-color: hsl(0, 0%, 100%);
+  --hover-color: hsl(0, 0%, 73%);
+}
+
+html[data-theme = 'dark'] {
+  --background-color: hsl(207, 26%, 17%);
+  --text-color: hsl(0, 0%, 100%);
+  --elem-color: hsl(209, 23%, 22%);
+  --hover-color: hsl(210, 23%, 15%);
+}
+

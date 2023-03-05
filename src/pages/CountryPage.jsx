@@ -6,16 +6,7 @@ import { COUNTRY_ROUTE } from '../utils/consts';
 const CountryPage = () => {
   const navigate = useNavigate()
   const param = useParams();
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(`https://nolood.github.io/rest-countries-api/data.json`);
-      const data = await response.json();
-      setData(data);
-      console.log(data)
-    };
-    fetchData();
-  }, []);
+  const data = PUBLIC_URL + '/data.json';
   const country = data.filter((item) => item.alpha3Code === param.id) 
 
 

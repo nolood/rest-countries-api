@@ -2,16 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Card from './Card';
 
 const CardList = ({activeFilter, searchFilter}) => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(`https://nolood.github.io/rest-countries-api/data.json`);
-      const data = await response.json();
-      setData(data);
-      console.log(data)
-    };
-    fetchData();
-  }, []);
+  const data = PUBLIC_URL + '/data.json'
   return (
     <div className='cardlist'>
       {

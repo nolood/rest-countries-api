@@ -225,6 +225,7 @@ $lig: 300;
 
 .back{
   width: 100%;
+  padding: 0 10px;
 }
 
 .back__btn {
@@ -261,7 +262,7 @@ $lig: 300;
 .country__information {
   display: flex;
   justify-content: space-between;
-  padding: 50px 0;
+  padding: 50px 10px;
 }
 
 .country__img {
@@ -324,6 +325,7 @@ $lig: 300;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .border__title {
@@ -331,10 +333,39 @@ $lig: 300;
 }
 
 .country__wrap, .country {
-  height: calc(100% - 78px);
-  overflow: hidden;
+  min-height: calc(100% - 78px);
 }
 
+
+@media (max-width: 1200px) {
+  .country__information {
+    justify-content: center;
+  }
+  .country__img {
+    margin-right: 50px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .country__information {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .country__title {
+    margin-top: 20px;
+  }
+  .country__img {
+    margin: 0;
+    margin-bottom: 50px;
+    width: 400px;
+    height: 200px;
+  }
+  .country__info {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
 
 @media (max-width: 710px) {
   .search__wrapper {
@@ -350,4 +381,14 @@ $lig: 300;
   .navbar__title {
     font-size: 16px;
   }
+  .country__img {
+    width: 290px;
+  }
+  .country__info-info {
+    flex-direction: column;
+  }
+  .cardlist {
+    justify-content: center;
+  }
+
 }

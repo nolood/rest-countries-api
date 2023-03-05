@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import { COUNTRY_ROUTE, PUBLIC_URL } from '../utils/consts';
+import { COUNTRY_ROUTE } from '../utils/consts';
 
 const CountryPage = () => {
   const navigate = useNavigate()
   const param = useParams();
-  const data = PUBLIC_URL + '/data.json';
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`https://nolood.github.io/rest-countries-api/data.json`);
+      const data = await response.json();
+      setData(data);
+      console.log(data)
+    };
+    fetchData();
+  }, []);
   const country = data.filter((item) => item.alpha3Code === param.id) 
+
+
   return (
     <div className='section country__wrap'>
       <div className='container country'>

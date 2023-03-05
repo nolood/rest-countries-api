@@ -6,7 +6,7 @@ import { COUNTRY_ROUTE, PUBLIC_URL } from '../utils/consts';
 const CountryPage = () => {
   const navigate = useNavigate()
   const param = useParams();
-  const data = PUBLIC_URL + '/data.json';
+  const data = 'https://nolood.github.io/rest-countries-api/data.json';
   const country = data.filter((item) => item.alpha3Code === param.id) 
   return (
     <div className='section country__wrap'>

@@ -1,8 +1,9 @@
 import React from 'react';
+import { PUBLIC_URL } from '../utils/consts';
 import Card from './Card';
 
 const CardList = ({activeFilter, searchFilter}) => {
-  const data = require('./../data.json')
+  const data = PUBLIC_URL + '/data.json'
   return (
     <div className='cardlist'>
       {

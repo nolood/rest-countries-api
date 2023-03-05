@@ -1,12 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import { COUNTRY_ROUTE } from '../utils/consts';
+import { COUNTRY_ROUTE, PUBLIC_URL } from '../utils/consts';
 
 const CountryPage = () => {
   const navigate = useNavigate()
   const param = useParams();
-  const data = require('./../data.json')
+  const data = PUBLIC_URL + '/data.json';
   const country = data.filter((item) => item.alpha3Code === param.id) 
   return (
     <div className='section country__wrap'>

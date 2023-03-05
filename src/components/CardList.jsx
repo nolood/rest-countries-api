@@ -6,9 +6,13 @@ const CardList = ({activeFilter, searchFilter}) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('https://nolood.github.io/rest-countries-api/data.json');
-      const data = await response.json();
-      setData(data);
+      try {
+        const response = await fetch('https://nolood.github.io/rest-countries-api/data.json');
+        const json = await response.json();
+        setData(json);
+      } catch (error) {
+        console.error(error);
+      }
     };
     fetchData();
   }, []);
